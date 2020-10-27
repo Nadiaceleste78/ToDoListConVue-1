@@ -58,7 +58,7 @@
                 let data = new FormData();
                 data.append('username', this.username);
                 data.append('password', this.password);
-                fetch('http://waitforit.com.ar/docta/wp-json/v2/login', {
+                fetch('https://waitforit.com.ar/docta/wp-json/v2/login', {
                         method: 'POST',
                         body: data
                     })

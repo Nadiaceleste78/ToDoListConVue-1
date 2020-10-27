@@ -58,7 +58,7 @@ methods:{
 
 4 - Dentro del componente padre (por ejemplo, App.vue), agregamos un `v-on` en la ejecución del componente hijo, con el evento que creamos en él.
 
-```js
+```html
 <hijo @nombre-del-evento='metodo-a-ejecutar'><hijo>
 
 ```
@@ -69,7 +69,7 @@ methods:{
 
 1 - Dentro del componente hijo, en el objeto de configuración, definimos el objeto `props` en el cual tenemos que aclarar el nombre de la propiedad y el tipo de dato que va a recibir. 
 
-```js
+```javascript
 props:{
     titulo: String,
     categorias: Array
@@ -78,13 +78,13 @@ props:{
 
 2 - Cuando ejecutamos el componente dentro del padre, declaramos como atributos de la etiqueta las propiedades que definimos. Si es string llamamos al tributo solo, y si el dato es una variable lo declaramos con `v-bind`.
 
-```js
+```html
 <hijo titulo='Propiedad' v-bind:categorias='cats'></hijo>
 ```
 
 3 - Una vez realizados los pasos anteriores, podemos utilizar esas propiedades en el template del componente hijo, como variables. 
 
-```js
+```html
 <template>
     <h1>{{titulo}}</h1>
     <ul>
@@ -176,4 +176,27 @@ export default new Router({
 })
 
 ```
+
+
+
+## Deployment en Vercel desde la consola 
+
+1 - Ejecutar el comando `vercel login` para logear con su email. Es el mismo que el *github*
+
+2 - Ejecutar el comando `vercel`. 
+
+3 - Nos pregunta si estamos en la carpeta correcta, si lo estamos, escribimos *Y* y enter.
+
+4 - Nos pregunta el nombre del usuario de vercel en el que queremos armar el deployment. 
+
+5 - Nos pregunta si queremos asociar nuestro proyecto a otro existente, si es nuevo ponemos *N* y enter.
+
+6 - Nos pide el nombre del proyecto, ponemos el nombre y damos enter. 
+
+7 - Nos pregunta donde están nuestros archivos. Por defecto estamos en "./" solo damos enter y seguimos. 
+
+8 - Nos pregunta con qué comando queremos hacer el build. Elegimos `npm run build`.
+
+9 - Por último seleccionamos la opción `Build Command` y empieza a subir. 
+
 
